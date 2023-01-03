@@ -1,7 +1,7 @@
 class Router
-  def initialize(movies_controller, watchlist_controller)
+  def initialize(movies_controller)
     @movies_controller = movies_controller
-    @watchlist_controller = watchlist_controller
+    # @watchlist_controller = watchlist_controller
     @running = true
   end
 
@@ -26,7 +26,7 @@ class Router
     puts "--------------------"
     puts "------- Menu -------"
     puts "--------------------"
-    puts "1. Watchlists Menu"
+    # puts "1. Watchlists Menu"
     puts "2. Movies Menu"
     puts "3. Exit"
     print "> "
@@ -34,7 +34,7 @@ class Router
 
   def initial_navigation_action(choice)
     case choice
-    when 1 then watchlist_menu
+    # when 1 then watchlist_menu
     when 2 then movies_menu
     when 3 then stop!
     else puts "Please put a number between 1 and 3"
@@ -102,7 +102,6 @@ class Router
     when 1 then @movies_controller.list
     when 2 then @movies_controller.add
     when 3 then @movies_controller.import
-    when 3 then @movies_controller.add_movie_to_watchlist
     when 4 then @movies_controller.delete
     when 5 then initial_route_action
     when 6 then stop!
